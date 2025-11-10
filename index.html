@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Bucks Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="main">
+            <!-- vänster panel (stora vbucks ikon)-->
+            <div class="left">
+                <h3>V-Bucks <br /> <span class="vbucks-count blue-text">0</span></h3>
+                <div class="vbucks-img-container">
+                    <img src="./assets/V-Bucks.webp" alt="V-Bucks" class="vbucks-img" onclick="incrementVBuck(event)" draggable="false">
+                </div>
+            </div>
+
+            <!-- höger panel (upgrades och liknande)-->
+
+            <script id="upgrade-template" type="text/template">
+                <div class="right">
+                    <div class="upgrade" onclick="buyUpgrade('{{name}}')" draggable="false">
+                        <img src="{{image}}" class="upgrade-img" alt="{{name}}">
+                        <div class="mid-upgrade">
+                            <h4>{{name}}</h4>
+                            <div class="cost-info">
+                                <span class="{{name}}-cost">{{cost}}</span></p>
+                                <img src="./assets/V-Bucks.webp" alt="V-Bucks">
+                            </div>
+                        </div>
+                        <div class="right-upgrade">
+                            <p>Lvl <span class="{{name}}-level">0</span></p>
+                        </div>
+                        <div class="info-box">
+                            +<span class="{{name}}-profit">{{profit}}</span>/tick
+                        </div>
+                    </div>
+            </script>
+                <div class="right" id="upgrades-container"></div>
+            </div>
+            <div class="statistics">
+                <div class="texts">
+                    <p>VPC:<span id="vpc-text" class="blue-text">1</span></p>
+                    <p>VPS:<span id="vps-text" class="blue-text">0</span></p>
+                </div>
+            </div>
+
+
+<!-- utility knappar -->
+<button class="Prestige" onclick="prestige()">Prestige</button>
+<button class="Reset" onclick="resetGame()">Cashout</button>
+    </section>
+
+    <!-- ladda js -->
+    <script src="js/animations.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/upgrades.js"></script>
+
+</body>
+
+</html>
